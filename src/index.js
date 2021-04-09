@@ -22,6 +22,19 @@ class App extends React.Component {
       }
     );
   }
+
+  componentDidMount() {
+    console.log("Component Rendered");
+  }
+
+  componentDidUpdate() {
+    console.log("Component Updated");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Cleared");
+  }
+
   render() {
     if (this.state.lat) {
       return <div>Latitude: {this.state.lat}</div>;
