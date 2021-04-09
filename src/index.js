@@ -23,13 +23,13 @@ class App extends React.Component {
     );
   }
   render() {
-    return (
-      <div>
-        Latitude: {this.state.lat}
-        <br />
-        Error: {this.state.errMsg}
-      </div>
-    );
+    if (this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>;
+    } else if (this.state.errMsg) {
+      return <div>Error: {this.state.errMsg}</div>;
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 ReactDOM.render(<App />, document.querySelector("#root"));
