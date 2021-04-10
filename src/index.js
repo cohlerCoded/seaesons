@@ -35,7 +35,7 @@ class App extends React.Component {
     } else if (this.state.errMsg) {
       return <div>Error: {this.state.errMsg}</div>;
     } else {
-      return <Spinner />;
+      return <Spinner message="Please accept location request" />;
     }
   }
 }
