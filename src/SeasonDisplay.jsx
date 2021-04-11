@@ -1,11 +1,4 @@
 import "./SeasonDisplay.css";
-const getSeason = (lat, month) => {
-  if (month > 2 && month < 9) {
-    return lat > 0 ? "summer" : "winter";
-  } else if (month < 3 && month > 8) {
-    return lat < 0 ? "summer" : "winter";
-  }
-};
 const seasonConfig = {
   summer: {
     text: "Let's hit the beach!",
@@ -15,6 +8,13 @@ const seasonConfig = {
     text: "Burrr, it's chilly!",
     iconName: "snowflake",
   },
+};
+const getSeason = (lat, month) => {
+  if (month > 2 && month < 9) {
+    return lat > 0 ? "summer" : "winter";
+  } else if (month < 3 && month > 8) {
+    return lat < 0 ? "summer" : "winter";
+  }
 };
 const SeasonDisplay = (props) => {
   const season = getSeason(props.lat, new Date().getMonth());
